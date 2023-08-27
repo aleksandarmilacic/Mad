@@ -34,7 +34,7 @@ namespace Mad.UI
             {
                 float deltaTime = 1.0f / 60.0f;  // You can replace this with actual time elapsed later.
 
-                _inputManager.ProcessInput(playerEntity, this); // Could be made more dynamic to support more entities later.
+                _inputManager.ProcessInput(playerEntity); // Could be made more dynamic to support more entities later.
 
                 physicsSystem.Update(deltaTime);
                 renderSystem.Update(deltaTime);

@@ -23,7 +23,7 @@ namespace Mad.GameEngine.ECS
         };
         }
 
-        public void ProcessInput(Entity playerEntity, GameLoop isRunning)
+        public void ProcessInput(Entity playerEntity)
         {
             if (Console.KeyAvailable)
             {
@@ -37,8 +37,7 @@ namespace Mad.GameEngine.ECS
 
                 if (key == ConsoleKey.Escape)
                 {
-                    isRunning = false;
-                    return;
+                    Environment.Exit(0); 
                 }
             }
         }
