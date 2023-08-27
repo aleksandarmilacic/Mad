@@ -8,39 +8,46 @@ namespace Mad.UI
     public class GameLoop
     {
         private InputManager _inputManager;
-        public bool IsRunning;
+        private GameEventSystem _gameEventSystem;
+        private CommandBar _commandBar;
+        private bool _isRunning;
+        private List<Entity> _entities; // moved to class field
+
+        // Add these
+        private PhysicsSystem _physicsSystem;
+        private RenderSystem _renderSystem;
 
         public GameLoop()
         {
             _inputManager = new InputManager();
-            IsRunning = true;
+            _isRunning = true;
+            _entities = InitializeEntities();  // Initialize entities before using them
+            _gameEventSystem = new GameEventSystem(_entities);
+            _commandBar = new CommandBar();
+
+            // Initialize these
+            _physicsSystem = new PhysicsSystem(_entities);
+            _renderSystem = new RenderSystem(_entities);
         }
 
-        public void Run()
+        private List<Entity> InitializeEntities()
         {
-            var entities = new List<Entity>
-            {
-                new Entity(1)
-            };
+            var unitEntity = new Entity(2);
+            unitEntity.AddComponent(new HealthComponent { Health = 100 });
+            unitEntity.AddComponent(new AttackComponent { AttackPower = 10 });
 
-            var renderSystem = new RenderSystem(entities);
-            var physicsSystem = new PhysicsSystem(entities);
+            return new List<Entity> { unitEntity };
+        }
 
-            var playerEntity = entities[0];
-            playerEntity.AddComponent(new RenderComponent());
-            playerEntity.AddComponent(new PhysicsComponent());
+        public void Update(float deltaTime)
+        {
+            _inputManager.ProcessInput(_entities[0]);  // We'll assume this is the player entity for now
+            _gameEventSystem.Update(deltaTime);
 
-            while (IsRunning)
-            {
-                float deltaTime = 1.0f / 60.0f;  // You can replace this with actual time elapsed later.
-
-                _inputManager.ProcessInput(playerEntity); // Could be made more dynamic to support more entities later.
-
-                physicsSystem.Update(deltaTime);
-                renderSystem.Update(deltaTime);
-
-                // Insert any code here to break the loop, perhaps by setting _isRunning = false based on some condition.
-            }
+            // Use these
+            _physicsSystem.Update(deltaTime);
+            _renderSystem.Update(deltaTime);
         }
     }
+
 }

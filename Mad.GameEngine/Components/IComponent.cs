@@ -1,7 +1,8 @@
-﻿namespace Mad.GameEngine.ECS
+﻿namespace Mad.GameEngine.Components
 {
     public interface IComponent
     {
         // Marker interface
     }
+
 }

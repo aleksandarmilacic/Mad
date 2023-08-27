@@ -1,6 +1,5 @@
 ﻿namespace Mad.GameEngine
 {
-
     public class GameStateManager
     {
         public GameState CurrentState { get; private set; }

@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
+﻿
+using Mad.GameEngine.Components;
 
 namespace Mad.GameEngine.ECS
 {

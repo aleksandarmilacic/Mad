@@ -1,5 +1,4 @@
-﻿using Mad.GameEngine.ECS;
-using Mad.GameEngine.Math;
+﻿using Mad.GameEngine.Math;
 
 namespace Mad.GameEngine.Components
 {

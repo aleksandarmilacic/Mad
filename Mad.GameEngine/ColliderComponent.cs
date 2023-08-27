@@ -1,4 +1,4 @@
-﻿using Mad.GameEngine.ECS;
+﻿using Mad.GameEngine.Components;
 using System.Drawing;
 
 namespace Mad.GameEngine
