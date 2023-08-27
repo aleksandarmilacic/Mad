@@ -1,4 +1,5 @@
-﻿using Mad.GameEngine.Math;
+﻿
+using OpenTK.Mathematics;
 
 namespace Mad.GameEngine.Components
 {

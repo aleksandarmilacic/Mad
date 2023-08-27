@@ -1,6 +1,5 @@
 ﻿using Mad.GameEngine.Components;
-using Mad.GameEngine;
-using Mad.GameEngine.Math;
+using OpenTK.Mathematics;
 using System;
 namespace Mad.GameEngine.ECS
 {

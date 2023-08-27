@@ -8,6 +8,11 @@
 
   <ItemGroup>
     <PackageReference Include="OpenTK" Version="4.8.0" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mad.Assets\Mad.Assets.csproj" />
   </ItemGroup>
 
 </Project>

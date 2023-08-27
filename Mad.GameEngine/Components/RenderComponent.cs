@@ -1,4 +1,5 @@
-﻿using Mad.GameEngine.Math;
+﻿
+using OpenTK.Mathematics;
 
 namespace Mad.GameEngine.Components
 {
@@ -6,6 +7,6 @@ namespace Mad.GameEngine.Components
     {
         public Vector2 Position { get; set; }
         public Vector2 Size { get; set; }
-        // Add texture, color, etc. as needed
+        public int TextureID { get; set; }
     }
 }
